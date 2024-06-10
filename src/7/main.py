@@ -7,8 +7,7 @@ testcases = [
     (-2147483648, 0)
 ]
 
-class Solution:
-    def reverse(self, x: int) -> int:
+def str_based_answer(x: int) -> int:
       positive = x > 0
 
       if not positive:
@@ -18,6 +17,11 @@ class Solution:
       if not positive:
         s *= -1
       return s if s < 2 ** 31 - 1 and s > -2**31 else 0 
+
+class Solution:
+    def reverse(self, x: int) -> int:
+      
+      return str_based_answer(x)
 
 def main():
   for x, expected in testcases:
