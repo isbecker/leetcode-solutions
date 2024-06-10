@@ -5,7 +5,7 @@ This repository contains my solutions to various problems on LeetCode. I will be
 ## Tech components
 
 - Python
-- nix
+- [nix](https://nixos.org/)
   - [flake-parts](https://flake.parts)
   - [devenv](https://devenv.sh/)
 - [direnv](https://direnv.net/)
