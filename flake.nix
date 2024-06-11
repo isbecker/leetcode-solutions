@@ -33,12 +33,16 @@
             enable = true;
           };
 
+          pre-commit.hooks = {
+            ruff.enable = true;
+          };
+
           packages = [
             config.packages.default
             pkgs.python3Packages.pip
             pkgs.rye
             pkgs.just
-            pkgs.vsc-leetcode-cli
+            pkgs.direnv
           ];
         };
       };
