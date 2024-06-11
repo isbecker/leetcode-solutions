@@ -3,31 +3,19 @@ testcases = [(121, True), (-121, False), (10, False), (2**31, False), (0, True),
 
 class Solution:
     def isPalindrome(self, x: int) -> bool:
-        if x < 0:  # all negative numbers will be non-palendromic
+        if x < 0:
             return False
-        exponent = 12
-        digits = []
-        while exponent >= 0:
-            power_of_ten = 10**exponent
-            mod_power = 10 ** (exponent + 1)
-            digit = x % mod_power // power_of_ten
-            exponent -= 1
-
-            digits.append(digit)
-
-        nonzero_digit_encountered = False
-        exponent = 0
-
+        
+        original = x
         reversed_num = 0
-        for d in digits:
-            if not nonzero_digit_encountered and d == 0:
-                continue
-            else:
-                nonzero_digit_encountered = True
-            reversed_num += 10**(exponent) * d
-            exponent += 1
+        
+        while x != 0:
+            digit = x % 10
+            reversed_num = reversed_num * 10 + digit
+            x = x // 10
+        
+        return original == reversed_num
 
-        return reversed_num == x
 
 def main():
     for case, expected in testcases:
