@@ -5,7 +5,7 @@ testcases = [
     ("AB", 1, "AB"),
     ("AB", 2, "AB"),
     ("ANOTHEREXAMPLE", 10, "ANOTHEERLEPXMA"),
-    ("ONEMOREEXAMPLEFORTESTINGPURPOSES", 5, "OXRPNEAOTGUSEEMFENREMRPESIPSOLTO")
+    ("ONEMOREEXAMPLEFORTESTINGPURPOSES", 5, "OXRPNEAOTGUSEEMFENREMRPESIPSOLTO"),
 ]
 
 
@@ -19,13 +19,13 @@ class Solution:
             for j in range(numRows):
                 if i >= s_len:
                     break
-                print(i,j, s[i])
+                print(i, j, s[i])
                 grid[j].append(s[i])
                 i += 1
             for j in range(numRows - 2, 0, -1):
                 if i >= s_len:
                     break
-                print(i,j, s[i])
+                print(i, j, s[i])
                 grid[j].append(s[i])
                 i += 1
 

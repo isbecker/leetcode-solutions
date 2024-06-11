@@ -12,32 +12,35 @@ testcases = [
     ("atoyota", "atoyota"),
 ]
 
+
 def expand_around_center(s: str, left: int, right: int) -> str:
     while left >= 0 and right < len(s) and s[left] == s[right]:
         left -= 1
         right += 1
-    return s[left + 1:right]
+    return s[left + 1 : right]
+
 
 class Solution:
     def longestPalindrome(self, s: str) -> str:
-      if not s or len(s) == 1:
-        return s
+        if not s or len(s) == 1:
+            return s
 
-      longest = ""
+        longest = ""
 
-      for i in range(len(s)):
-        # odd length
-        odd = expand_around_center(s, i, i)
-        # even length
-        even = expand_around_center(s, i, i + 1)
+        for i in range(len(s)):
+            # odd length
+            odd = expand_around_center(s, i, i)
+            # even length
+            even = expand_around_center(s, i, i + 1)
 
-        if len(odd) > len(longest):
-          longest = odd
+            if len(odd) > len(longest):
+                longest = odd
 
-        if len(even) > len(longest):
-          longest = even
+            if len(even) > len(longest):
+                longest = even
 
-      return longest 
+        return longest
+
 
 def main():
     for s, expected in testcases:
