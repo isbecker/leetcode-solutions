@@ -16,27 +16,26 @@ class Solution:
             ("IX", 9),
             ("V", 5),
             ("IV", 4),
-            ("I", 1)
+            ("I", 1),
         ]
-        
+
         roman = ""
-        
+
         for symbol, value in roman_numerals:
             count = num // value
             roman += symbol * count
             num -= value * count
-        
-        return roman
 
+        return roman
 
 
 def main():
     sol = Solution()
     for case, expected in testcases:
         result = sol.intToRoman(case)
-        assert result == expected
 
-        print(f"Expected: {expected}, Result: {result}")
+        print(f"Case: {case}, Expected: {expected}, Result: {result}")
+        assert result == expected
 
     print("PASSED")
 
